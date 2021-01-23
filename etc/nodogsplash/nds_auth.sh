@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Servidor GoogleScript
-URL="https://script.google.com/macros/s/AKfycbz2eyxxWUpmcCeApVaVTrdbEBxPvOq68pSEMM7lI5Q2qXO46yKG2HmL/exec"
+URL="URL_GOOGLE-API/Sheet"
 
 #Depedencias 
 # opkg install nodogsplash libustream-openssl curl
