@@ -30,7 +30,7 @@ $ ndsctl clients
 
 Salva as informações de login em uma planilha do Google. Para controlar o acesso, liberado ou bloqueado, o script rodando em no AP OpenWrt /etc/nodogsplash/start.sh baixa as lista de ALLOW ou DENY na planilha. 
 
-```html
+```js
 function doGet(e){
   
   let action = e.parameter.action;
