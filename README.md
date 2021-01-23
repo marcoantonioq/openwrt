@@ -1,3 +1,6 @@
+# NodoGsPlash no OpenWrt 19.07
+
+Sistema de controle de acesso com OpenWrt + GoogleSheet/Script
 
 # Depedencias 
 

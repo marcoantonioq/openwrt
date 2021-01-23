@@ -19,31 +19,14 @@ config nodogsplash
   option binauth '/etc/nodogsplash/nds_auth.sh'
 
   # Typical ports you will probably want to open up.
-  #list authenticated_users 'allow tcp port 22'
-  # list authenticated_users 'allow tcp port 53'
-  # list authenticated_users 'allow udp port 53'
-  # list authenticated_users 'allow tcp port 80'
-  # list authenticated_users 'allow tcp port 443'
-  # list authenticated_users 'allow tcp port 443'
-
-  ## Whatsapp 
-  # list authenticated_users 'allow udp port 45395'
-  # list authenticated_users 'allow udp port 3478'
-  # list authenticated_users 'allow tcp port 4244'
-  # list authenticated_users 'allow tcp port 5222'
-  # list authenticated_users 'allow tcp port 5223'
-  # list authenticated_users 'allow tcp port 5228'
-  # list authenticated_users 'allow tcp port 5242'
-  # list authenticated_users 'allow tcp port 59234'
-  # list authenticated_users 'allow tcp port 50318'
-  # list authenticated_users 'allow udp port 59234'
-  # list authenticated_users 'allow udp port 50318'
-
+  list authenticated_users 'allow tcp port 80'
+  list authenticated_users 'allow tcp port 443'
 
   # Or for happy customers allow all
-  # list authenticated_users 'allow all'
+  list authenticated_users 'allow all'
 
   # Allow ports for SSH/Telnet/DNS/DHCP/HTTP/HTTPS
+  list users_to_router 'allow tcp port 22'
   list users_to_router 'allow tcp port 53'
   list users_to_router 'allow udp port 53'
   list users_to_router 'allow tcp port 80'
