@@ -23,7 +23,7 @@ function teste(){
 * @returns {bool} Retorna boleano
 */
 function sendEmails({
-  emailAddress='ccbfaina@gmail.com', 
+  emailAddress='email.send@exemple.com', 
   subject='GS: WIFI', 
   message
 }){
