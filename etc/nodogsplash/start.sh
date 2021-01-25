@@ -2,7 +2,7 @@
 
 source /etc/nodogsplash/params.conf
 
-(sleep 8
+(sleep 1
     echo "Baixando lista GoogleScript.." 
     wget $URL_API?action=deny -O /etc/nodogsplash/deny.txt &>/dev/null 
     wget $URL_API?action=allow -O /etc/nodogsplash/allow.txt &>/dev/null

