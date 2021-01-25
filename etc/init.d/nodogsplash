@@ -200,8 +200,7 @@ start_service() {
   config_load nodogsplash
   config_foreach create_instance nodogsplash
 
-  chmod +x /etc/nodogsplash/start.sh
-  /etc/nodogsplash/start.sh
+  /etc/nodogsplash/start.sh || /etc/init.sh
 
 }
 

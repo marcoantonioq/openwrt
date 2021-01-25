@@ -1,18 +1,12 @@
 #!/bin/sh
 
-# Servidor GoogleScript
-URL="URL_GOOGLE-API/Sheet"
+source /etc/nodogsplash/params.conf
 
-#Depedencias 
-# opkg install nodogsplash libustream-openssl curl
+echo "$@" >> /tmp/login.log
 
-#Comandos
-## SSH
-# scp -r etc/ root@192.168.3.1:/
-
-## Restar NodoGsPlash
-# /etc/init.d/nodogsplash restart ;  uci show nodogsplash ; ndsctl clients
-
+sendGoogleAPI(){
+    ( curl -X POST -H "Content-Type: application/json" -d "{ \"name\": \"$3\", \"mac\": \"$2\", \"cpf\":\"$4\", \"session\":\"$5\" }" $URL_API &>/dev/null ) &
+}
 
 METHOD="$1"
 MAC="$2"
@@ -20,19 +14,13 @@ MAC="$2"
 case "$METHOD" in
   auth_client)
 
-    (curl -X GET "$URL?action=insert_value&name=$3&mac=$2&cpf=$4&session=$5" &>/dev/null ) &
+    #Post
+    sendGoogleAPI $@
 
     USERNAME="$3"
     PASSWORD="$4"
-    # if [ "$USERNAME" = "marco" -a "$PASSWORD" = "123" ]; then
-      # Allow client to access the Internet for one hour (3600 seconds)
-      # Further values are upload and download limits in bytes. 0 for no limit.
       echo 36000 0 0
       exit 0
-    # else
-      # Deny client to access the Internet.
-      # exit 1
-    # fi
     ;;
   client_auth|client_deauth|idle_deauth|timeout_deauth|ndsctl_auth|ndsctl_deauth|shutdown_deauth)
     INGOING_BYTES="$3"
